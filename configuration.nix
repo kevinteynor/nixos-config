@@ -12,9 +12,16 @@
 
   # enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 20;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kevin-framework"; # Define your hostname.
