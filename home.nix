@@ -24,6 +24,7 @@
       gh
 
       discord
+      gimp
     ];
   };
   
