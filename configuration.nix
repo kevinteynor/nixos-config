@@ -65,6 +65,9 @@
     xkbVariant = "";
   };
 
+  # Enable fwupd to allow updating device firmware
+  services.fwupd.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
