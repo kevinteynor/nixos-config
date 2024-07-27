@@ -36,6 +36,9 @@
     enable = true;
     userName = "Kevin Teynor";
     userEmail = "kevinteynor@gmail.com";
+    aliases = {
+      l = "log --oneline --graph";
+    };
   };
 
   programs.fish = {
