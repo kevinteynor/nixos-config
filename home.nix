@@ -48,8 +48,12 @@
   programs.helix = {
     enable = true;
     package = helix.packages."${pkgs.system}".helix;
-    # package = helix.packages."x86_64-linux".default;
-    # defaultEditor =;true;
-    settings.theme = "nord-night";
+    settings = {
+      theme = "nord-night";
+      editor.inline-diagnostics = {
+        cursor-line = "hint";
+        other-lines = "error";
+      };
+    };
   };
 }
