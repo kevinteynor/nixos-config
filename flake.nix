@@ -18,7 +18,7 @@
 
     # helix editor
     helix = {
-      url = "github:helix-editor/helix/23.10";
+      url = "github:helix-editor/helix/24.07";
     };    
   };
 

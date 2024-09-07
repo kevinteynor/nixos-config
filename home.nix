@@ -50,10 +50,13 @@
     package = helix.packages."${pkgs.system}".helix;
     settings = {
       theme = "nord-night";
-      editor.inline-diagnostics = {
-        cursor-line = "hint";
-        other-lines = "error";
-      };
+      
+      # TODO: enable in new Helix version >24.07
+      #       https://github.com/helix-editor/helix/pull/6417
+      # editor.inline-diagnostics = {
+      #   cursor-line = "hint";
+      #   other-lines = "error";
+      # };
     };
   };
 }
