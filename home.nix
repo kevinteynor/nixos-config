@@ -22,9 +22,11 @@
       tree
       jq
       gh
+      ripgrep
 
       discord
       gimp
+      firefox
     ];
   };
   
