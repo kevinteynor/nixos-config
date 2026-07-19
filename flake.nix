@@ -7,26 +7,20 @@
     # nixpkgs:
     # nixos-stable = 6 month release cadence (with only bug fixes in betwee)
     # nixos-unstable = latest main
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # home manager:
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # helix editor
-    helix = {
-      url = "github:helix-editor/helix/25.07.1";
-    };    
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    helix,
     ...
   }@inputs: {
     # Used with `nixos-rebuild --flake .#<hostname>`
@@ -34,7 +28,7 @@
     nixosConfigurations.kevin-framework = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       
-      specialArgs = { inherit inputs helix; };
+      specialArgs = { inherit inputs; };
 
       modules = [
         ./configuration.nix

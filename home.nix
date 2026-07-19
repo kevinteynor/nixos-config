@@ -1,7 +1,6 @@
 { 
   config,
   pkgs,
-  helix,
   ...
 }:
 
@@ -17,6 +16,7 @@
     };
     
     packages = with pkgs; [
+      helix
       file
       which
       tree
@@ -49,7 +49,6 @@
 
   programs.helix = {
     enable = true;
-    package = helix.packages."${pkgs.system}".helix;
     settings = {
       theme = "nord-night";
       editor = {

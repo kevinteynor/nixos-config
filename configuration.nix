@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, helix, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -121,7 +121,7 @@
     # editors
     
     # helix
-    helix.packages."${pkgs.system}".helix
+    helix
     
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
